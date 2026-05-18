@@ -44,9 +44,11 @@
         <li class="list-group-item"><code>git checkout [rama]</code> - Cambia a una rama específica del repositorio. Si la rama no existe, se puede crear con <code>git checkout -b [rama]</code>.</li>
     </ul>
 
-    <h2>Comparación con otros sistemas</h2>
+        <h2 class="mt-4" id="comparacion">Comparación con otros sistemas</h2>
     <table class="table">
-        <thead>
+        <div class="table-responsive mb-4">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-dark">
             <tr>
                 <th>Sistema</th>
                 <th>Tipo</th>
@@ -57,22 +59,22 @@
             <tr>
                 <td>Git</td>
                 <td>Distribuido</td>
-                <td>Muy alta</td>
+    <td><span class="badge bg-success">Muy alta</span></td>
             </tr>
             <tr>
                 <td>SVN</td>
                 <td>Centralizado</td>
-                <td>Media</td>
+    <td><span class="badge bg-warning text-dark">Media</span></td>
             </tr>
             <tr>
                 <td>Mercurial</td>
                 <td>Distribuido</td>
-                <td>Baja</td>
+            <td><span class="badge bg-danger">Baja</span></td>
             </tr>
             <tr>
                 <td>Perforce</td>
                 <td>Centralizado</td>
-                <td>Especializado (AAA, empresas)</td>
+             <td><span class="badge bg-info text-dark">Especializado (AAA, empresas)</span></td>
             </tr>
         </tbody>
     </table>
