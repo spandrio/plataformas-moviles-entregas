@@ -79,23 +79,36 @@
         </tbody>
     </table>
 
-    <h2>¿Ya usaste Git?</h2>
+        <h2 class="mt-4" id="formulario">¿Ya usaste Git?</h2>
     <p>Completá el siguiente formulario para compartir tu experiencia:</p>
 
     <form class="form">
         <label for="nombre">Tu nombre:</label>
         <input type="text" id="nombre" name="nombre" class="form-control">
-
-        <label for="experiencia">¿Qué usás más?</label><br>
-        <select id="experiencia" name="experiencia" class="form-select">
+<div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Tu nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="mb-3">
+                        <label for="experiencia" class="form-label">¿Qué usás más?</label>
+      
+                         <select id="experiencia" name="experiencia" class="form-select">
             <option value="git">Git</option>
             <option value="github">Git + GitHub</option>
             <option value="otro">Otro sistema</option>
             <option value="ninguno">Todavía no uso ninguno</option>
         </select>
-
-        <input type="submit" value="Enviar" class="btn btn-primary mt-2">
     </form>
-    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+        <input type="submit" value="Enviar" class="btn btn-primary mt-2">
+ </form>
+            </div>
+        </div>
+ 
+    </div>
+                <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 </body>
+            
 </html>
