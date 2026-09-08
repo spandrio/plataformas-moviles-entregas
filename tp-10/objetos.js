@@ -27,7 +27,7 @@ var personaEjemplo = {
  * }
  */
 function crearPersona(nombre, apellido, edad, documento) {
-    // 
+    return { nombre, apellido, edad, documento };
 }
 console.log("resultado crearPersona: ", crearPersona("Juan", "Pérez", 20, 123456));
 
@@ -43,7 +43,8 @@ console.log("resultado crearPersona: ", crearPersona("Juan", "Pérez", 20, 12345
  * - un objeto, representando a la misma persona recibida, pero con un nuevo campo 'apodo'.
  */
 function agregarApodo(persona, apodo) {
-    // 
+    // Usamos spread para no mutar el objeto original
+    return { ...persona, apodo };
 }
 console.log("resultado agregarApodo: ", agregarApodo(personaEjemplo, "JuanPe"));
 
@@ -58,7 +59,9 @@ console.log("resultado agregarApodo: ", agregarApodo(personaEjemplo, "JuanPe"));
  * - un objeto, representando a la misma persona recibida, pero sin el campo documento.
  */
 function sinDocumento(persona) {
-    // 
+    // Desestructuramos para separar 'documento' del resto de los campos
+    const { documento, ...resto } = persona;
+    return resto;
 }
 console.log("resultado sinDocumento: ", sinDocumento(personaEjemplo));
 
@@ -73,7 +76,7 @@ console.log("resultado sinDocumento: ", sinDocumento(personaEjemplo));
  * - un valor boolean ('true' o 'false'), indicando si la propiedad 'documento' existe en el objeto recibido.
  */
 function tieneDocumento(persona) {
-    // 
+    return "documento" in persona;
 }
 console.log("resultado tieneDocumento: ", tieneDocumento(personaEjemplo));
 
@@ -88,7 +91,7 @@ console.log("resultado tieneDocumento: ", tieneDocumento(personaEjemplo));
  * - un string, con el nombre completo de una persona. Asumimos que nombre completo tiene el formato "Apellido, Nombre". Por ejemplo para una persona con nombre "Juan" y apellido "Pérez", el nombre completo sería "Pérez, Juan".
  */
 function nombreCompletoDePersona(persona) {
-    // 
+    return `${persona.apellido}, ${persona.nombre}`;
 }
 console.log("resultado nombreCompletoDePersona: ", nombreCompletoDePersona(personaEjemplo));
 
@@ -103,7 +106,7 @@ console.log("resultado nombreCompletoDePersona: ", nombreCompletoDePersona(perso
  * - un objeto, representando a la misma persona recibida, pero con un año más. 
  */
 function felizCumpleaños(persona) {
-    // 
+    return { ...persona, edad: persona.edad + 1 };
 }
 console.log("resultado felizCumpleaños: ", felizCumpleaños(personaEjemplo));
 
@@ -119,7 +122,8 @@ console.log("resultado felizCumpleaños: ", felizCumpleaños(personaEjemplo));
  * - un valor boolean ('true' o 'false'), indicando si persona1 y persona2 son la misma persona.
  */
 function sonLaMismaPersona(persona1, persona2) {
-    // 
+    // El documento identifica de forma única a una persona
+    return persona1.documento === persona2.documento;
 }
 console.log("resultado sonLaMismaPersona: ", sonLaMismaPersona(
     personaEjemplo,
@@ -138,7 +142,7 @@ console.log("resultado sonLaMismaPersona: ", sonLaMismaPersona(
  * - el objeto de la persona con mayor edad. Si ambas tienen la misma edad, retorna cualquiera de las dos.
  */
 function personaMasGrande(persona1, persona2) {
-    // 
+    return persona1.edad >= persona2.edad ? persona1 : persona2;
 }
 console.log("resultado personaMasGrande: ", personaMasGrande(
     { nombre: "Ana", edad: 30 },
