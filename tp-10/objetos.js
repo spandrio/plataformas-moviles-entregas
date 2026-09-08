@@ -1,8 +1,8 @@
 var personaEjemplo = {
-    "apellido": "Perez",
+    "apellido": "mondo",
     "nombre": "Juan",
-    "edad": 20,
-    "documento": 12345
+    "edad": 67,
+    "documento": 49306826
 };
 
 /**
@@ -29,7 +29,7 @@ var personaEjemplo = {
 function crearPersona(nombre, apellido, edad, documento) {
     return { nombre, apellido, edad, documento };
 }
-console.log("resultado crearPersona: ", crearPersona("Juan", "Pérez", 20, 123456));
+console.log("resultado crearPersona: ", crearPersona("Juan", "mondo", 67, 49306826));
 
 
 /**
@@ -46,7 +46,7 @@ function agregarApodo(persona, apodo) {
     // Usamos spread para no mutar el objeto original
     return { ...persona, apodo };
 }
-console.log("resultado agregarApodo: ", agregarApodo(personaEjemplo, "JuanPe"));
+console.log("resultado agregarApodo: ", agregarApodo(personaEjemplo, "JuanMo"));
 
 
 /**
@@ -127,7 +127,7 @@ function sonLaMismaPersona(persona1, persona2) {
 }
 console.log("resultado sonLaMismaPersona: ", sonLaMismaPersona(
     personaEjemplo,
-    { apellido: "Perez", nombre: "Juan", edad: 20, documento: 12345 }
+    { apellido: "mondo", nombre: "Juan", edad: 67, documento: 49306826 }
 ));
 
 
